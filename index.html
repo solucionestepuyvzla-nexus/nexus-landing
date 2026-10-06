@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS.AI | Centralized Intelligence. Unbreakable Operations.</title>
+    <!-- Tailwind CSS CDN Oficial -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuentes Google: Plus Jakarta Sans y JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        cyberBlack: '#040711',
+                        cyberDark: '#080E1C',
+                        nexusBlue: '#00F0FF',
+                        nexusBlueDark: '#00A3FF',
+                        nexusPurple: '#8B5CF6',
+                        nexusGreen: '#00FF85',
+                        nexusAmber: '#FFB800',
+                        darkSlate: '#0D1527',
+                        darkCard: '#111B31',
+                        borderSubtle: '#1C2945',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(1000%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Cyber grid de fondo */
+        .cyber-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #040711;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2945;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00F0FF;
+        }
+        .glow-blue {
+            box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.25);
+        }
+        .glow-blue-lg {
+            box-shadow: 0 0 60px -10px rgba(0, 240, 255, 0.35);
+        }
+    </style>
+</head>
+<body class="bg-cyberBlack text-gray-100 font-sans antialiased selection:bg-nexusBlue selection:text-black relative overflow-x-hidden cyber-grid">
+
+    <!-- Ambient Glow Top Background -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-nexusBlue/10 via-nexusBlueDark/5 to-transparent rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed top-[45%] right-[-200px] w-[500px] h-[500px] bg-nexusPurple/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- NOTIFICATION BAR / SYSTEM STATUS -->
+    <div class="bg-cyberDark/90 border-b border-borderSubtle text-[11px] font-mono text-gray-400 py-1.5 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-nexusGreen animate-ping"></span>
+                <span class="text-white font-semibold">KERNEL v4.9 OPERACIONAL</span>
+                <span class="hidden sm:inline text-gray-500">| Clúster Privado Latam-01 activo</span>
+            </div>
+            <div class="flex items-center gap-4 text-gray-400">
+                <span class="hidden md:inline">Latencia Global: <strong class="text-nexusBlue font-mono">0.82 ms</strong></span>
+                <span>SLA Disponibilidad: <strong class="text-nexusGreen font-mono">99.999%</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <nav class="border-b border-borderSubtle/70 bg-cyberBlack/85 backdrop-blur-xl sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-nexusBlue to-nexusBlueDark flex items-center justify-center font-mono font-black text-black text-sm shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-transform duration-300 group-hover:scale-105">
+                    NX
+                </div>
+                <div class="text-2xl font-black tracking-tighter text-white">
+                    NEXUS<span class="text-nexusBlue transition-all duration-300 group-hover:text-white">.AI</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#infraestructura" class="hover:text-nexusBlue transition-colors duration-200">El Núcleo</a>
+                <a href="#modulos" class="hover:text-nexusBlue transition-colors duration-200 flex items-center gap-1.5">
+                    Módulos Inteligentes
+                    <span class="text-[10px] font-mono font-bold bg-nexusBlue/10 text-nexusBlue px-1.5 py-0.5 rounded border border-nexusBlue/20">4 Live</span>
+                </a>
+                <a href="#simulador" class="hover:text-nexusBlue transition-colors duration-200 text-white font-semibold flex items-center gap-1.5">
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-nexusBlue animate-pulse"></span>
+                    Simulador IA
+                </a>
+                <a href="#auditoria" class="hover:text-nexusBlue transition-colors duration-200">Auditoría Élite</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#simulador" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-300 border border-borderSubtle hover:border-nexusBlue/60 hover:text-white px-3 py-2 rounded-lg transition-all duration-300">
+                    <svg class="w-3.5 h-3.5 text-nexusBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Probar Asesor
+                </a>
+                <a href="#auditoria" class="bg-nexusBlue text-black font-extrabold px-4 py-2 rounded-lg text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
+                    Conectar con un Socio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[92vh] flex items-center justify-center px-6 py-20 overflow-hidden">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-nexusBlue/10 rounded-full blur-[170px] pointer-events-none"></div>
+        
+        <div class="max-w-5xl text-center z-10">
+            <!-- Badge superior -->
+            <div class="inline-flex items-center gap-2 bg-darkCard/80 border border-borderSubtle hover:border-nexusBlue/40 px-4 py-1.5 rounded-full mb-8 backdrop-blur-md transition-all duration-500 hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] group">
+                <span class="w-2 h-2 rounded-full bg-nexusBlue animate-ping"></span>
+                <span class="text-xs font-mono font-bold tracking-widest text-nexusBlue uppercase">Sistemas de Alta Disponibilidad & IA</span>
+                <span class="text-gray-600 text-xs font-mono">|</span>
+                <span class="text-xs text-gray-300 font-mono group-hover:text-white transition-colors duration-300">Arquitectura Zero-Downtime</span>
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white mb-6 leading-none select-none">
+                CENTRALIZED<br>
+                <span class="bg-gradient-to-r from-nexusBlue via-nexusBlueDark to-nexusPurple bg-clip-text text-transparent drop-shadow-sm">
+                    INTELLIGENCE.
+                </span>
+            </h1>
+
+            <!-- Subtítulo -->
+            <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Interconectamos y automatizamos infraestructura crítica empresarial. La convergencia definitiva de <span class="text-white font-medium">24 años de ingeniería de sistemas</span> y arquitecturas autónomas de Inteligencia Artificial de respuesta milimétrica.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
+                <a href="#simulador" class="w-full sm:w-auto bg-nexusBlue text-black font-extrabold px-8 py-4 rounded-xl text-sm uppercase tracking-wider hover:bg-white hover:shadow-[0_0_30px_rgba(0,240,255,0.7)] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                    <span>Simular Automatización</span>
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="#modulos" class="w-full sm:w-auto border border-borderSubtle bg-darkCard/50 text-gray-300 font-semibold px-8 py-4 rounded-xl text-sm hover:bg-darkSlate hover:text-white hover:border-nexusBlue/50 transition-all duration-300 flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-nexusBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    <span>Explorar Módulos Activos</span>
+                </a>
+            </div>
+
+            <!-- Telemetría en Vivo Hero KPI Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-borderSubtle/60 text-left">
+                <div class="bg-darkCard/40 border border-borderSubtle/60 rounded-xl p-3.5 backdrop-blur-sm transition-all duration-300 hover:border-nexusBlue/40">
+                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Flujo Transaccional</div>
+                    <div class="text-xl font-mono font-bold text-white mt-1 flex items-baseline gap-1">
+                        <span id="kpi-ops" class="text-nexusBlue">14.820</span>
+                        <span class="text-xs text-gray-400 font-normal">ops/sec</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard/40 border border-borderSubtle/60 rounded-xl p-3.5 backdrop-blur-sm transition-all duration-300 hover:border-nexusBlue/40">
+                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Latencia P99</div>
+                    <div class="text-xl font-mono font-bold text-white mt-1 flex items-baseline gap-1">
+                        <span class="text-nexusGreen">&lt; 1.15</span>
+                        <span class="text-xs text-gray-400 font-normal">ms</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard/40 border border-borderSubtle/60 rounded-xl p-3.5 backdrop-blur-sm transition-all duration-300 hover:border-nexusBlue/40">
+                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Autonomía de Agentes</div>
+                    <div class="text-xl font-mono font-bold text-white mt-1 flex items-baseline gap-1">
+                        <span class="text-white">99.8%</span>
+                        <span class="text-xs text-nexusGreen font-normal">sin fricción</span>
+                    </div>
+                </div>
+                <div class="bg-darkCard/40 border border-borderSubtle/60 rounded-xl p-3.5 backdrop-blur-sm transition-all duration-300 hover:border-nexusBlue/40">
+                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Seguridad Operativa</div>
+                    <div class="text-xl font-mono font-bold text-white mt-1 flex items-baseline gap-1">
+                        <span class="text-nexusBlue">SOC2</span>
+                        <span class="text-xs text-gray-400 font-normal">Zero-Leak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL NÚCLEO ESTRATÉGICO -->
+    <section id="infraestructura" class="py-24 border-t border-borderSubtle/80 bg-cyberDark/50 relative">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-3 py-1 rounded-md border border-nexusBlue/20">
+                    // CONVERGENCIA TECNOLÓGICA
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-6 tracking-tight leading-tight">
+                    El Punto de Conexión Absoluto.
+                </h2>
+                <p class="text-gray-300 text-base leading-relaxed mb-5 font-light">
+                    En la física de redes complejas, el <strong class="text-white font-semibold">Nexus</strong> es el nodo central inquebrantable. No construimos software cosmético ni dashboards pasivos: diseñamos las arterias lógicas e inteligentes sobre las que corren operaciones corporativas masivas.
+                </p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Nuestras soluciones integran agentes de IA que autogestionan contingencias en tiempo real, entrenados bajo metodologías híbridas de ingeniería que reducen los tiempos tradicionales de despliegue de meses a semanas.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                    <div class="border border-borderSubtle bg-darkCard/60 p-4 rounded-xl hover:border-nexusBlue/40 transition-all duration-300">
+                        <div class="text-nexusBlue font-mono font-bold text-lg mb-1">01. Autogestión</div>
+                        <p class="text-xs text-gray-400">Agentes que corrigen fallas de red y cuellos de botella sin intervención humana.</p>
+                    </div>
+                    <div class="border border-borderSubtle bg-darkCard/60 p-4 rounded-xl hover:border-nexusBlue/40 transition-all duration-300">
+                        <div class="text-nexusGreen font-mono font-bold text-lg mb-1">02. Soberanía</div>
+                        <p class="text-xs text-gray-400">Modelos privados ejecutados en su propia infraestructura cloud o bare-metal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal / Consola de Telemetría Dinámica -->
+            <div class="lg:col-span-6 border border-borderSubtle rounded-2xl bg-cyberBlack relative overflow-hidden shadow-2xl glow-blue transition-all duration-500 hover:border-nexusBlue/60">
+                <!-- Terminal Header -->
+                <div class="bg-darkSlate px-5 py-3.5 border-b border-borderSubtle flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                        <span class="text-xs font-mono text-gray-400 ml-2">nexus-core-daemon // cluster-01</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-mono text-nexusBlue uppercase tracking-wider bg-nexusBlue/10 px-2 py-0.5 rounded border border-nexusBlue/20">LIVE STREAM</span>
+                    </div>
+                </div>
+
+                <!-- Terminal Content -->
+                <div class="p-6 font-mono text-xs space-y-3.5 leading-relaxed bg-gradient-to-b from-cyberBlack to-cyberDark min-h-[340px]">
+                    <div class="text-gray-500 flex justify-between border-b border-borderSubtle/60 pb-2">
+                        <span>TIMESTAMP: <span id="telemetry-time" class="text-gray-300">--:--:--</span></span>
+                        <span class="text-nexusGreen">STATUS: NOMINAL</span>
+                    </div>
+
+                    <div id="terminal-stream" class="space-y-2 text-gray-300">
+                        <div class="flex items-start gap-2">
+                            <span class="text-nexusBlue font-bold">&gt;</span>
+                            <span>[INIT] Cargando hiper-pesos neuronales NX-Enterprise... <span class="text-nexusGreen">[OK]</span></span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-nexusBlue font-bold">&gt;</span>
+                            <span>[MESH] 24 nodos de telemetría sincronizados a <strong class="text-nexusBlue font-bold">0.78ms</strong></span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-nexusAmber font-bold">&gt;</span>
+                            <span>[AI-AGENT] Desvío preventivo de 4,200 requests por congestión detectada en Gateway-B</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-nexusGreen font-bold">&gt;</span>
+                            <span>[AUTO-RESOLVED] Tasa de entrega estabilizada en <strong class="text-white">99.998%</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Live Telemetry Matrix -->
+                    <div class="mt-6 pt-4 border-t border-borderSubtle/80 grid grid-cols-3 gap-3 text-center">
+                        <div class="bg-darkCard/80 p-2.5 rounded-lg border border-borderSubtle">
+                            <div class="text-[10px] text-gray-500">CONSUMO CPU</div>
+                            <div class="text-sm font-bold text-nexusGreen mt-0.5" id="val-cpu">14.2%</div>
+                        </div>
+                        <div class="bg-darkCard/80 p-2.5 rounded-lg border border-borderSubtle">
+                            <div class="text-[10px] text-gray-500">EVENTOS / S</div>
+                            <div class="text-sm font-bold text-nexusBlue mt-0.5" id="val-events">38,419</div>
+                        </div>
+                        <div class="bg-darkCard/80 p-2.5 rounded-lg border border-borderSubtle">
+                            <div class="text-[10px] text-gray-500">ANOMALÍAS</div>
+                            <div class="text-sm font-bold text-white mt-0.5" id="val-anomalies">0</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 text-[11px] text-gray-500 flex items-center justify-between">
+                        <span>⚡ 24 Años de Respaldo en Ingeniería de Campo</span>
+                        <span class="text-nexusBlue hover:underline cursor-pointer" onclick="injectSimulationLog()">[Forzar Test de Carga]</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MÓDULOS DE INGENIERÍA (SHOWROOM INTERACTIVO) -->
+    <section id="modulos" class="py-24 border-t border-borderSubtle bg-cyberBlack relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-3 py-1 rounded-md border border-nexusBlue/20">
+                        // ENTERPRISE SOLUTIONS SHOWROOM
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 tracking-tight">
+                        Módulos Propietarios de Alta Disponibilidad
+                    </h2>
+                    <p class="text-gray-400 text-base mt-3">
+                        Interaccione con nuestros módulos reales. Cada unidad opera de forma autónoma con orquestación distribuida e IA nativa.
+                    </p>
+                </div>
+                <!-- Interactive Controls Switcher -->
+                <div class="flex items-center gap-2 bg-darkCard/80 border border-borderSubtle p-1.5 rounded-xl text-xs font-mono">
+                    <span class="text-gray-400 px-3 py-1">Frecuencia de muestreo:</span>
+                    <button id="btn-freq-live" onclick="setModuleMode('live')" class="px-3 py-1 rounded-lg bg-nexusBlue text-black font-bold transition-all duration-300">En Vivo (1s)</button>
+                    <button id="btn-freq-stress" onclick="setModuleMode('stress')" class="px-3 py-1 rounded-lg text-gray-400 hover:text-white transition-all duration-300">Stress Test</button>
+                </div>
+            </div>
+
+            <!-- TARJETAS DEL SHOWROOM INTERACTIVO -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- CARD 1: NX-GAS -->
+                <div class="group border border-borderSubtle hover:border-nexusBlue/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.25)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-nexusBlue/5 rounded-full blur-2xl group-hover:bg-nexusBlue/15 transition-all duration-500 pointer-events-none"></div>
+                    
+                    <div>
+                        <!-- Header del Módulo -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-mono font-extrabold text-nexusBlue bg-nexusBlue/10 border border-nexusBlue/30 px-2.5 py-1 rounded-md">[ NX-GAS ]</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-nexusGreen animate-pulse"></span>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase">ONLINE</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-nexusBlue transition-colors duration-300">
+                            Nexus Gas-Link
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Logística predictiva y control automatizado de flujos para redes complejas de distribución y telemetría de GLP.
+                        </p>
+
+                        <!-- Panel de Telemetría Interactiva -->
+                        <div class="bg-cyberBlack/80 border border-borderSubtle/80 rounded-xl p-3.5 mb-6 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Flujo de Red:</span>
+                                <span id="nx-gas-flow" class="text-white font-bold">4,820 m³/h</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Presión Dinámica:</span>
+                                <span id="nx-gas-pressure" class="text-nexusGreen font-bold">42.4 bar</span>
+                            </div>
+                            <!-- Mini Barra de Capacidad -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-gray-400">
+                                    <span>Capacidad Válvulas</span>
+                                    <span id="nx-gas-percent">84%</span>
+                                </div>
+                                <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+                                    <div id="nx-gas-bar" class="bg-nexusBlue h-full rounded-full transition-all duration-500" style="width: 84%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acción del módulo -->
+                    <div>
+                        <button onclick="simulateModuleAction('gas', this)" class="w-full py-2.5 px-3 rounded-xl bg-borderSubtle/60 hover:bg-nexusBlue hover:text-black text-gray-300 text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center gap-2 border border-borderSubtle hover:border-nexusBlue">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <span>Simular Alivio de Presión</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 2: NX-HEALTH -->
+                <div class="group border border-borderSubtle hover:border-nexusBlue/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.25)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-nexusGreen/5 rounded-full blur-2xl group-hover:bg-nexusGreen/15 transition-all duration-500 pointer-events-none"></div>
+                    
+                    <div>
+                        <!-- Header del Módulo -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-mono font-extrabold text-nexusGreen bg-nexusGreen/10 border border-nexusGreen/30 px-2.5 py-1 rounded-md">[ NX-HEALTH ]</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-nexusGreen animate-pulse"></span>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase">ACTIVE</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-nexusGreen transition-colors duration-300">
+                            Nexus Health-Flow
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Orquestación inteligente de agendas médicas críticas mediante agentes autónomos de voz e IA conversacional.
+                        </p>
+
+                        <!-- Panel de Telemetría Interactiva -->
+                        <div class="bg-cyberBlack/80 border border-borderSubtle/80 rounded-xl p-3.5 mb-6 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Agentes de Voz:</span>
+                                <span id="nx-health-agents" class="text-nexusGreen font-bold">96 Activos</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Tasa de Resolución:</span>
+                                <span id="nx-health-rate" class="text-white font-bold">98.6%</span>
+                            </div>
+                            <!-- Simulación de onda de voz -->
+                            <div class="flex items-center justify-between pt-1 h-5 gap-1" id="voice-waves">
+                                <div class="w-1 bg-nexusGreen h-2 rounded-full animate-pulse"></div>
+                                <div class="w-1 bg-nexusGreen h-4 rounded-full animate-pulse" style="animation-delay: 0.1s"></div>
+                                <div class="w-1 bg-nexusGreen h-5 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div class="w-1 bg-nexusGreen h-3 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+                                <div class="w-1 bg-nexusGreen h-4 rounded-full animate-pulse" style="animation-delay: 0.15s"></div>
+                                <div class="w-1 bg-nexusGreen h-2 rounded-full animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acción del módulo -->
+                    <div>
+                        <button onclick="simulateModuleAction('health', this)" class="w-full py-2.5 px-3 rounded-xl bg-borderSubtle/60 hover:bg-nexusGreen hover:text-black text-gray-300 text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center gap-2 border border-borderSubtle hover:border-nexusGreen">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/></svg>
+                            <span>Disparar Agente de Voz</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 3: NX-GRID -->
+                <div class="group border border-borderSubtle hover:border-nexusAmber/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(255,184,0,0.25)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-nexusAmber/5 rounded-full blur-2xl group-hover:bg-nexusAmber/15 transition-all duration-500 pointer-events-none"></div>
+                    
+                    <div>
+                        <!-- Header del Módulo -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-mono font-extrabold text-nexusAmber bg-nexusAmber/10 border border-nexusAmber/30 px-2.5 py-1 rounded-md">[ NX-GRID ]</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-nexusAmber animate-pulse"></span>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase">SYNCHRONIZED</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-nexusAmber transition-colors duration-300">
+                            Nexus Power-Grid
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Análisis analítico avanzado de telemetría, cargas y contingencias en redes eléctricas de baja y media tensión.
+                        </p>
+
+                        <!-- Panel de Telemetría Interactiva -->
+                        <div class="bg-cyberBlack/80 border border-borderSubtle/80 rounded-xl p-3.5 mb-6 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Frecuencia Grid:</span>
+                                <span id="nx-grid-freq" class="text-nexusAmber font-bold">50.018 Hz</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Eficiencia Red:</span>
+                                <span id="nx-grid-eff" class="text-white font-bold">99.4%</span>
+                            </div>
+                            <!-- Mini Gauge Carga -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-gray-400">
+                                    <span>Balance de Carga</span>
+                                    <span id="nx-grid-load">Optimal (68%)</span>
+                                </div>
+                                <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+                                    <div id="nx-grid-bar" class="bg-nexusAmber h-full rounded-full transition-all duration-500" style="width: 68%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acción del módulo -->
+                    <div>
+                        <button onclick="simulateModuleAction('grid', this)" class="w-full py-2.5 px-3 rounded-xl bg-borderSubtle/60 hover:bg-nexusAmber hover:text-black text-gray-300 text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center gap-2 border border-borderSubtle hover:border-nexusAmber">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                            <span>Balancear Nodos</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CARD 4: NX-CIVILS -->
+                <div class="group border border-borderSubtle hover:border-nexusPurple/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(139,92,246,0.25)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-nexusPurple/5 rounded-full blur-2xl group-hover:bg-nexusPurple/15 transition-all duration-500 pointer-events-none"></div>
+                    
+                    <div>
+                        <!-- Header del Módulo -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-mono font-extrabold text-nexusPurple bg-nexusPurple/10 border border-nexusPurple/30 px-2.5 py-1 rounded-md">[ NX-CIVILS ]</span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-nexusPurple animate-pulse"></span>
+                                <span class="text-[10px] font-mono text-gray-400 uppercase">AUDIT SCAN</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-nexusPurple transition-colors duration-300">
+                            Nexus Civils-Control
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Sistemas de auditoría algorítmica, trazabilidad física y control de ejecución en tiempo real para obras civiles masivas.
+                        </p>
+
+                        <!-- Panel de Telemetría Interactiva -->
+                        <div class="bg-cyberBlack/80 border border-borderSubtle/80 rounded-xl p-3.5 mb-6 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Mapeo Lidar / Fotogrametría:</span>
+                                <span id="nx-civils-nodes" class="text-nexusPurple font-bold">1,240 Puntos/s</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500">Desvío de Obra:</span>
+                                <span id="nx-civils-deviation" class="text-nexusGreen font-bold">&lt; 0.04% Tolerancia</span>
+                            </div>
+                            <!-- Mini Barra de Verificación -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[10px] text-gray-400">
+                                    <span>Trazabilidad de Hitos</span>
+                                    <span id="nx-civils-status">Auditado al 100%</span>
+                                </div>
+                                <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+                                    <div id="nx-civils-bar" class="bg-nexusPurple h-full rounded-full transition-all duration-500" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acción del módulo -->
+                    <div>
+                        <button onclick="simulateModuleAction('civils', this)" class="w-full py-2.5 px-3 rounded-xl bg-borderSubtle/60 hover:bg-nexusPurple hover:text-black text-gray-300 text-xs font-mono font-bold transition-all duration-300 flex items-center justify-center gap-2 border border-borderSubtle hover:border-nexusPurple">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Auditar Hito Físico</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Toast de confirmación de interacción -->
+            <div id="module-toast" class="fixed bottom-6 right-6 bg-darkCard border border-nexusBlue text-white px-5 py-3.5 rounded-xl shadow-[0_10px_30px_rgba(0,240,255,0.3)] z-50 transform translate-y-24 opacity-0 transition-all duration-500 flex items-center gap-3 font-mono text-xs pointer-events-none">
+                <span class="w-2.5 h-2.5 rounded-full bg-nexusBlue animate-ping"></span>
+                <span id="module-toast-msg">Telemetría reconfigurada con éxito.</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SIMULADOR INTERACTIVO DE IA (NEXUS NEURAL ADVISOR) -->
+    <section id="simulador" class="py-24 border-t border-borderSubtle bg-gradient-to-b from-cyberDark via-cyberBlack to-cyberDark relative overflow-hidden">
+        
+        <!-- Glows decorativos del Chat -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-nexusBlue/10 rounded-full blur-[160px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-nexusPurple/10 rounded-full blur-[160px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-4 py-1.5 rounded-full border border-nexusBlue/20">
+                    // NEXUS NEURAL ADVISOR v4.9
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-4 tracking-tight">
+                    Simulador de Automatización Inteligente
+                </h2>
+                <p class="text-gray-400 text-base md:text-lg">
+                    Consulte en tiempo real con el motor cognitivo de <strong class="text-white">NEXUS.AI</strong>. Seleccione su industria o plantee un cuello de botella operativo para recibir una arquitectura de automatización recomendada de inmediato.
+                </p>
+            </div>
+
+            <!-- CHAT INTERFACE CONTAINER -->
+            <div class="max-w-4xl mx-auto rounded-2xl border border-borderSubtle bg-cyberDark/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-500 hover:border-nexusBlue/50">
+                
+                <!-- Chat Window Header -->
+                <div class="bg-darkSlate px-6 py-4 border-b border-borderSubtle flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-nexusBlue to-nexusPurple flex items-center justify-center font-mono font-bold text-black text-sm shadow-[0_0_12px_rgba(0,240,255,0.4)]">
+                                AI
+                            </div>
+                            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-nexusGreen border-2 border-cyberDark"></span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white flex items-center gap-2">
+                                NEXUS Architecture Copilot
+                                <span class="text-[10px] font-mono bg-nexusBlue/10 text-nexusBlue px-2 py-0.5 rounded border border-nexusBlue/20">Neural Engine</span>
+                            </div>
+                            <div class="text-xs text-gray-400 flex items-center gap-1.5">
+                                <span>Tiempo de inferencia promedio:</span>
+                                <strong class="text-nexusGreen font-mono">1.2s</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick controls -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="clearChatHistory()" class="text-xs text-gray-400 hover:text-white px-3 py-1.5 rounded-lg border border-borderSubtle hover:border-gray-600 transition font-mono flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                            <span>Reiniciar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Industry Quick Chips (Botones rápidos de industria) -->
+                <div class="bg-cyberBlack/80 px-6 py-3.5 border-b border-borderSubtle/60 overflow-x-auto scrollbar-none flex items-center gap-2">
+                    <span class="text-xs font-mono text-gray-400 whitespace-nowrap mr-1">Industrias clave:</span>
+                    <button onclick="selectIndustry('logistics')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusBlue hover:border-nexusBlue transition-all duration-300 flex items-center gap-1.5">
+                        <span>🚚 Logística & Flotas</span>
+                    </button>
+                    <button onclick="selectIndustry('health')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusGreen hover:border-nexusGreen transition-all duration-300 flex items-center gap-1.5">
+                        <span>🏥 Salud & Clínicas</span>
+                    </button>
+                    <button onclick="selectIndustry('energy')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusAmber hover:border-nexusAmber transition-all duration-300 flex items-center gap-1.5">
+                        <span>⚡ Energía & Utilities</span>
+                    </button>
+                    <button onclick="selectIndustry('ecommerce')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusBlue hover:border-nexusBlue transition-all duration-300 flex items-center gap-1.5">
+                        <span>🛒 E-commerce & Retail</span>
+                    </button>
+                    <button onclick="selectIndustry('fintech')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusPurple hover:border-nexusPurple transition-all duration-300 flex items-center gap-1.5">
+                        <span>🏦 Finanzas & Fintech</span>
+                    </button>
+                    <button onclick="selectIndustry('industry')" class="industry-chip whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-borderSubtle bg-darkCard/50 text-gray-300 hover:text-nexusBlue hover:border-nexusBlue transition-all duration-300 flex items-center gap-1.5">
+                        <span>🏭 Manufactura</span>
+                    </button>
+                </div>
+
+                <!-- Chat History Window -->
+                <div id="chat-messages" class="p-6 h-[440px] overflow-y-auto space-y-5 text-sm leading-relaxed scroll-smooth">
+                    
+                    <!-- Mensaje Inicial de la IA -->
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-nexusBlue/20 border border-nexusBlue/40 text-nexusBlue flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs">
+                            NX
+                        </div>
+                        <div class="bg-darkCard border border-borderSubtle rounded-2xl rounded-tl-sm p-4 max-w-2xl text-gray-200 space-y-2">
+                            <div class="flex items-center justify-between text-[11px] font-mono text-gray-500 border-b border-borderSubtle/60 pb-1.5 mb-2">
+                                <span class="text-nexusBlue font-bold">NEXUS NEURAL ADVISOR</span>
+                                <span>SISTEMA CONECTADO</span>
+                            </div>
+                            <p>
+                                Saludos, ejecutivo. Soy el orquestador cognitivo de <strong class="text-nexusBlue">NEXUS.AI</strong>. Mi función es analizar los cuellos de botella de su operación y estructurar una propuesta de automatización con agentes autónomos y arquitecturas de alta disponibilidad.
+                            </p>
+                            <p class="text-gray-400 text-xs">
+                                💡 Haga clic en cualquiera de las <strong class="text-white">industrias clave</strong> arriba o redacte directamente su desafío operativo en la consola inferior (ej: <em>"Quiero reducir el tiempo de respuesta a clientes y conciliar pagos bancarios"</em>).
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Typing / Thinking State (Oculto por defecto) -->
+                <div id="chat-typing" class="hidden px-6 py-3 bg-cyberBlack/50 border-t border-borderSubtle/50 text-xs font-mono text-nexusBlue flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-nexusBlue animate-ping"></span>
+                    <span>NEXUS Core procesando parámetros operativos y estructurando arquitectura...</span>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-4 bg-cyberBlack border-t border-borderSubtle flex items-center gap-3">
+                    <div class="relative flex-1">
+                        <input 
+                            type="text" 
+                            id="chat-input"
+                            placeholder="Describa su industria o cuello de botella (ej. Logística de última milla, triage médico, auditoría contable)..." 
+                            class="w-full bg-darkCard/80 border border-borderSubtle rounded-xl px-4 py-3.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-nexusBlue focus:ring-1 focus:ring-nexusBlue transition-all font-sans"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="bg-nexusBlue text-black font-extrabold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center gap-2 group flex-shrink-0"
+                    >
+                        <span>Diagnosticar</span>
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CAPTURA ÉLITE (FORMULARIO DE AUDITORÍA) -->
+    <section id="auditoria" class="py-24 border-t border-borderSubtle bg-gradient-to-b from-cyberDark to-black relative">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-4 py-1.5 rounded-full border border-nexusBlue/20">
+                // EXECUTIVE ADVISORY
+            </span>
+
+            <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-4 tracking-tight">
+                Optimice su Infraestructura Operativa
+            </h2>
+            <p class="text-gray-400 mb-10 max-w-xl mx-auto text-sm leading-relaxed">
+                Sesiones exclusivas de arquitectura de procesos para directores de operaciones y CTOs. Evaluamos sus cuellos de botella e integramos IA de grado industrial en su ecosistema actual.
+            </p>
+            
+            <form id="audit-form" onsubmit="handleAuditSubmit(event)" class="space-y-4 max-w-md mx-auto text-left bg-darkCard/60 border border-borderSubtle p-8 rounded-2xl shadow-2xl backdrop-blur-md">
+                <div>
+                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Nombre y Cargo del Ejecutivo</label>
+                    <input 
+                        type="text" 
+                        id="audit-name"
+                        required 
+                        placeholder="Ej: Lic. Alejandro Rossi - VP Operations" 
+                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                    >
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Email Corporativo</label>
+                    <input 
+                        type="email" 
+                        id="audit-email"
+                        required 
+                        placeholder="ejecutivo@corporacion.com" 
+                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                    >
+                </div>
+                <div>
+                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Área / Industria a Automatizar</label>
+                    <input 
+                        type="text" 
+                        id="audit-industry"
+                        placeholder="Ej: Distribución de Gas / Logística Flotas" 
+                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                    >
+                </div>
+                <button 
+                    type="submit" 
+                    id="audit-submit-btn"
+                    class="w-full mt-4 bg-nexusBlue text-black font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5"
+                >
+                    Solicitar Key-Session de Eficiencia
+                </button>
+                <div class="text-[11px] font-mono text-gray-500 text-center pt-2">
+                    🔒 Cifrado de grado bancario. NDA bilateral automático previo a la sesión.
+                </div>
+            </form>
+
+            <!-- Form Success Box (Oculto) -->
+            <div id="audit-success" class="hidden max-w-md mx-auto bg-darkCard border border-nexusGreen p-8 rounded-2xl text-left font-mono space-y-4">
+                <div class="flex items-center gap-3 text-nexusGreen">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="text-sm font-bold">SOLICITUD DE AUDITORÍA REGISTRADA</span>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed font-sans">
+                    Un Arquitecto Senior de NEXUS.AI ha sido asignado a su caso. En breve recibirá en su correo corporativo el enlace seguro para la Key-Session y los documentos de confidencialidad.
+                </p>
+                <div class="bg-cyberBlack p-3 rounded-xl border border-borderSubtle text-[11px] text-gray-400">
+                    <div>Token Asignado: <span id="audit-token" class="text-nexusBlue font-bold">#NX-8491-LATAM</span></div>
+                    <div>Prioridad: <span class="text-nexusGreen font-bold">TIER 1 (Inmediata)</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-borderSubtle py-10 bg-black text-xs text-gray-500 text-center font-mono">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-white font-bold tracking-tight">NEXUS<span class="text-nexusBlue">.AI</span></span>
+                <span>// HARDWARE & AI UNBREAKABLE ARCHITECTURES.</span>
+            </div>
+            <div>
+                &copy; 2026 NEXUS.AI. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT: SHOWROOM, TELEMETRÍA Y CHAT DE IA -->
+    <script>
+        // ==========================================
+        // 1. TELEMETRÍA Y RELOJ EN VIVO DEL NÚCLEO
+        // ==========================================
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toTimeString().split(' ')[0] + '.' + Math.floor(now.getMilliseconds() / 100);
+            const timeEl = document.getElementById('telemetry-time');
+            if (timeEl) timeEl.textContent = timeStr;
+        }
+        setInterval(updateClock, 100);
+        updateClock();
+
+        // Fluctuación orgánica de telemetría del dashboard
+        setInterval(() => {
+            const cpu = (12 + Math.random() * 5).toFixed(1);
+            const events = Math.floor(37000 + Math.random() * 3000);
+            const ops = (14.5 + Math.random() * 0.7).toFixed(3);
+            
+            const cpuEl = document.getElementById('val-cpu');
+            const eventsEl = document.getElementById('val-events');
+            const opsEl = document.getElementById('kpi-ops');
+
+            if (cpuEl) cpuEl.textContent = cpu + '%';
+            if (eventsEl) eventsEl.textContent = events.toLocaleString('es-ES');
+            if (opsEl) opsEl.textContent = ops;
+        }, 2200);
+
+        // Inyectar log simulado en el terminal
+        function injectSimulationLog() {
+            const stream = document.getElementById('terminal-stream');
+            if (!stream) return;
+            const msgs = [
+                "[STRESS-TEST] Inyectando 50,000 transacciones sintéticas...",
+                "[RESOLVED] Clúster autoescaló a 64 workers en 0.42s sin degradación",
+                "[SECURITY] Escaneo heurístico Zero-Day completado: 0 vulnerabilidades",
+                "[CONSENSUS] Sincronización de agentes de campo alcanzada: latencia 0.74ms"
+            ];
+            const msg = msgs[Math.floor(Math.random() * msgs.length)];
+            const div = document.createElement('div');
+            div.className = 'flex items-start gap-2 text-nexusBlue animate-pulse';
+            div.innerHTML = `<span class="font-bold">&gt;</span><span>${msg}</span>`;
+            stream.prepend(div);
+            showToast("Diagnóstico del Núcleo completado en 0.7ms");
+        }
+
+        // ==========================================
+        // 2. INTERACTIVIDAD DEL SHOWROOM DE MÓDULOS
+        // ==========================================
+        let moduleMode = 'live';
+
+        function setModuleMode(mode) {
+            moduleMode = mode;
+            const btnLive = document.getElementById('btn-freq-live');
+            const btnStress = document.getElementById('btn-freq-stress');
+
+            if (mode === 'live') {
+                btnLive.className = 'px-3 py-1 rounded-lg bg-nexusBlue text-black font-bold transition-all duration-300';
+                btnStress.className = 'px-3 py-1 rounded-lg text-gray-400 hover:text-white transition-all duration-300';
+                showToast("Modo En Vivo activado: Frecuencia nominal de 1 muestra/s");
+            } else {
+                btnStress.className = 'px-3 py-1 rounded-lg bg-nexusAmber text-black font-bold transition-all duration-300';
+                btnLive.className = 'px-3 py-1 rounded-lg text-gray-400 hover:text-white transition-all duration-300';
+                showToast("Stress Test activado: Simulando 10x volumen de tráfico");
+                triggerStressSpike();
+            }
+        }
+
+        function triggerStressSpike() {
+            const gasFlow = document.getElementById('nx-gas-flow');
+            const gasBar = document.getElementById('nx-gas-bar');
+            const gridFreq = document.getElementById('nx-grid-freq');
+            
+            if (gasFlow) gasFlow.textContent = "7,940 m³/h (Peak)";
+            if (gasBar) gasBar.style.width = "96%";
+            if (gridFreq) gridFreq.textContent = "50.048 Hz";
+
+            setTimeout(() => {
+                if (gasFlow) gasFlow.textContent = "4,820 m³/h";
+                if (gasBar) gasBar.style.width = "84%";
+                if (gridFreq) gridFreq.textContent = "50.018 Hz";
+            }, 3500);
+        }
+
+        // Acciones interactivas específicas de cada tarjeta
+        function simulateModuleAction(type, btnElement) {
+            const originalHTML = btnElement.innerHTML;
+            btnElement.disabled = true;
+            btnElement.innerHTML = `<svg class="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> Ejecutando...`;
+
+            setTimeout(() => {
+                btnElement.disabled = false;
+                btnElement.innerHTML = originalHTML;
+
+                if (type === 'gas') {
+                    const pressure = document.getElementById('nx-gas-pressure');
+                    if (pressure) pressure.textContent = (41.8 + Math.random() * 0.5).toFixed(1) + ' bar (Calibrado)';
+                    showToast("NX-GAS: Válvula regulada automáticamente. Presión estabilizada.");
+                } else if (type === 'health') {
+                    const agents = document.getElementById('nx-health-agents');
+                    if (agents) agents.textContent = "104 Activos (+8)";
+                    showToast("NX-HEALTH: 8 agentes adicionales desplegados para absorber pico de llamadas.");
+                } else if (type === 'grid') {
+                    const load = document.getElementById('nx-grid-load');
+                    const bar = document.getElementById('nx-grid-bar');
+                    if (load) load.textContent = "Balanceado (54%)";
+                    if (bar) bar.style.width = "54%";
+                    showToast("NX-GRID: Micro-redes rebalanceadas. Sobrecarga disipada.");
+                } else if (type === 'civils') {
+                    const dev = document.getElementById('nx-civils-deviation');
+                    if (dev) dev.textContent = "< 0.01% Tolerancia (Certificado)";
+                    showToast("NX-CIVILS: Auditoría de hito validada algorítmicamente contra plano BIM.");
+                }
+            }, 1200);
+        }
+
+        // Toast de feedback
+        function showToast(message) {
+            const toast = document.getElementById('module-toast');
+            const msgEl = document.getElementById('module-toast-msg');
+            if (!toast || !msgEl) return;
+
+            msgEl.textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3200);
+        }
+
+        // ==========================================
+        // 3. BASE DE CONOCIMIENTO Y CHAT DE IA (NEXUS ADVISOR)
+        // ==========================================
+        const AUTOMATION_KNOWLEDGE = {
+            logistics: {
+                industryName: "Logística, Flotas & Despacho de Cargas",
+                summary: "Reducción radical de tiempos muertos y optimización predictiva de rutas con micro-agentes de despacho.",
+                bottlenecks: [
+                    "Planificación estática de rutas sensible a congestión y contingencias.",
+                    "Falta de telemetría predictiva de mantenimiento en unidades.",
+                    "Demoras humanas en conciliación de guías de despacho y POD (Proof of Delivery)."
+                ],
+                solution: "Despliegue del stack **NX-Logistics Grid**: Agentes autónomos sincronizados con GPS y telemetría de motor que recalculan despachos dinámicamente cada 60 segundos.",
+                metrics: {
+                    timeReduction: "-42% en tiempos de ciclo",
+                    accuracy: "99.9% precisión en ventanas de entrega",
+                    fuelSavings: "-18% en consumo de combustible"
+                },
+                suggestedModule: "Nexus Gas-Link & Logistics Engine"
+            },
+            health: {
+                industryName: "Salud, Redes Clínicas & Hospitales",
+                summary: "Eliminación del ausentismo y saturación de call centers mediante agentes de voz biométricos y triaje autónomo.",
+                bottlenecks: [
+                    "Tasa de 'No-Show' (ausentismo) en turnos médicos de hasta un 35%.",
+                    "Saturación de líneas de admisión y demora en triage preliminar.",
+                    "Fricción en autorización y validación con aseguradoras."
+                ],
+                solution: "Implementación del módulo **NX-Health Flow**: Agentes conversacionales ultra-realistas que confirman, reprograman y efectúan pre-triage médico en tiempo real sin intervención humana.",
+                metrics: {
+                    timeReduction: "Cero tiempo de espera en línea telefónica",
+                    accuracy: "98.6% de retención de turnos",
+                    fuelSavings: "-60% de costos operativos de atención"
+                },
+                suggestedModule: "Nexus Health-Flow"
+            },
+            energy: {
+                industryName: "Energía, Utilities & Redes de Distribución",
+                summary: "Detección temprana de anomalías en redes de alta y baja tensión con algoritmos de compensación en milisegundos.",
+                bottlenecks: [
+                    "Identificación tardía de caídas de tensión o fugas no técnicas.",
+                    "Costos exorbitantes por cuadrillas de emergencia enviadas sin diagnóstico certero.",
+                    "Dificultad para integrar generación distribuida y fuentes renovables."
+                ],
+                solution: "Arquitectura **NX-Power Grid**: Ingesta masiva de telemetría IoT con IA en el Edge que predice picos de demanda y aísla fallas en menos de 2 milisegundos.",
+                metrics: {
+                    timeReduction: "-78% tiempo de restitución de fallas",
+                    accuracy: "99.999% disponibilidad del suministro",
+                    fuelSavings: "ROI proyectado en 4.5 meses"
+                },
+                suggestedModule: "Nexus Power-Grid"
+            },
+            ecommerce: {
+                industryName: "E-Commerce, Marketplaces & Retail Omnicanal",
+                summary: "Orquestación de fulfillment, personalización en tiempo real y agentes autónomos de atención post-venta.",
+                bottlenecks: [
+                    "Abandono de carritos por dudas no resueltas de despacho o stock.",
+                    "Gestión manual de devoluciones y disputas de garantía.",
+                    "Quiebres de stock por desfase entre almacenes físicos y virtuales."
+                ],
+                solution: "Plataforma **NX-Retail Copilot**: Sincronización omnicanal que predice inventario por SKU y atiende reclamos con capacidad de emitir etiquetas y reembolsos automáticamente.",
+                metrics: {
+                    timeReduction: "-85% tiempo en resolución de tickets",
+                    accuracy: "+26% incremento en conversión de ventas",
+                    fuelSavings: "Escalabilidad ilimitada en Black Friday"
+                },
+                suggestedModule: "Nexus Omni-Commerce Agent"
+            },
+            fintech: {
+                industryName: "Banca, Fintech & Instituciones Financieras",
+                summary: "Detección de fraude algorítmico, scoring crediticio automatizado y conciliación de saldos en tiempo real.",
+                bottlenecks: [
+                    "Falsos positivos en bloqueos de tarjetas que frustran al usuario de alto valor.",
+                    "Procesos manuales de onboarding y verificación KYC/AML lentos.",
+                    "Conciliaciones interbancarias nocturnas con latencias operativas."
+                ],
+                solution: "Clúster **NX-Secure Ledger**: Motores de inferencia neural que auditan micro-transacciones en < 2ms con análisis de grafos y modelos anti-fraude explicables.",
+                metrics: {
+                    timeReduction: "< 2ms latencia de scoring",
+                    accuracy: "-70% falsos positivos en prevención de fraude",
+                    fuelSavings: "Cumplimiento normativo 100% auditable"
+                },
+                suggestedModule: "Nexus Fraud & Ledger Engine"
+            },
+            industry: {
+                industryName: "Manufactura, Plantas Industriales & Cadena de Suministro",
+                summary: "Mantenimiento predictivo de maquinaria pesada y visión artificial para control de calidad con cero margen de error.",
+                bottlenecks: [
+                    "Paradas imprevistas de línea de ensamblaje por rotura mecánica.",
+                    "Inspección de calidad humana que fatiga y pasa micro-defectos.",
+                    "Cuellos de botella en la recepción de materias primas."
+                ],
+                solution: "Células **NX-Vision & Telemetry**: Cámaras industriales con visión por computadora e IA en el borde que examinan piezas a 120 fps y alertan desgaste de rodamientos días antes de la falla.",
+                metrics: {
+                    timeReduction: "-92% paradas imprevistas de planta",
+                    accuracy: "99.98% detección de micro-fisuras",
+                    fuelSavings: "+31% de rendimiento global del equipo (OEE)"
+                },
+                suggestedModule: "Nexus Civils & Industrial Vision"
+            }
+        };
+
+        // Función para seleccionar industria desde los botones rápidos
+        function selectIndustry(key) {
+            const data = AUTOMATION_KNOWLEDGE[key];
+            if (!data) return;
+            
+            addUserMessage(`Solicito recomendación técnica para la industria: ${data.industryName}`);
+            triggerAIResponse(data);
+        }
+
+        // Manejador del submit del formulario del chat
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chat-input');
+            const query = input.value.trim();
+            if (!query) return;
+
+            addUserMessage(query);
+            input.value = '';
+
+            // Detectar industria o palabras clave
+            const lower = query.toLowerCase();
+            let selectedKey = 'industry'; // Default a manufactura/industria
+
+            if (lower.includes('logis') || lower.includes('camion') || lower.includes('flota') || lower.includes('entrega') || lower.includes('transporte') || lower.includes('ruta')) {
+                selectedKey = 'logistics';
+            } else if (lower.includes('salud') || lower.includes('medic') || lower.includes('clinic') || lower.includes('pacient') || lower.includes('hospital') || lower.includes('cita') || lower.includes('turno')) {
+                selectedKey = 'health';
+            } else if (lower.includes('energi') || lower.includes('electr') || lower.includes('luz') || lower.includes('gas') || lower.includes('red') || lower.includes('potencia') || lower.includes('tension')) {
+                selectedKey = 'energy';
+            } else if (lower.includes('e-commerce') || lower.includes('ecommerce') || lower.includes('tienda') || lower.includes('venta') || lower.includes('retail') || lower.includes('carrito') || lower.includes('compra')) {
+                selectedKey = 'ecommerce';
+            } else if (lower.includes('banco') || lower.includes('fintech') || lower.includes('pago') || lower.includes('credito') || lower.includes('fraude') || lower.includes('dinero') || lower.includes('financ')) {
+                selectedKey = 'fintech';
+            } else if (lower.includes('obra') || lower.includes('civil') || lower.includes('construc') || lower.includes('edificio') || lower.includes('plano')) {
+                selectedKey = 'industry';
+            }
+
+            const data = AUTOMATION_KNOWLEDGE[selectedKey];
+            triggerAIResponse(data, query);
+        }
+
+        // Agregar mensaje del usuario a la ventana de chat
+        function addUserMessage(text) {
+            const chatMessages = document.getElementById('chat-messages');
+            const now = new Date();
+            const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            const messageHTML = `
+                <div class="flex items-start justify-end gap-3">
+                    <div class="bg-nexusBlue text-black font-medium rounded-2xl rounded-tr-sm p-3.5 max-w-xl text-sm shadow-md">
+                        <div class="flex items-center justify-between text-[10px] font-mono opacity-70 mb-1">
+                            <span class="font-bold">EJECUTIVO</span>
+                            <span>${time}</span>
+                        </div>
+                        <p>${escapeHTML(text)}</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-lg bg-white/10 text-white flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs">
+                        TÚ
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', messageHTML);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Simular respuesta inteligente de la IA con streaming y análisis estructurado
+        function triggerAIResponse(data, customQuery = null) {
+            const typingIndicator = document.getElementById('chat-typing');
+            typingIndicator.classList.remove('hidden');
+
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Retardo para dar sensación de procesamiento neural profundo
+            setTimeout(() => {
+                typingIndicator.classList.add('hidden');
+
+                const now = new Date();
+                const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                const bottlenecksList = data.bottlenecks.map(b => `<li class="flex items-start gap-2"><span class="text-nexusAmber font-mono">▸</span> <span>${b}</span></li>`).join('');
+
+                const aiMessageHTML = `
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-nexusBlue/20 border border-nexusBlue/40 text-nexusBlue flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs">
+                            NX
+                        </div>
+                        <div class="bg-darkCard border border-borderSubtle hover:border-nexusBlue/50 transition-all duration-300 rounded-2xl rounded-tl-sm p-5 max-w-2xl text-gray-200 space-y-4 shadow-xl">
+                            
+                            <!-- Header de Respuesta -->
+                            <div class="flex items-center justify-between text-[11px] font-mono border-b border-borderSubtle pb-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-nexusGreen"></span>
+                                    <span class="text-white font-bold">${data.industryName}</span>
+                                </div>
+                                <span class="text-nexusBlue font-mono">${time} | IA v4.9</span>
+                            </div>
+
+                            <p class="text-sm font-light text-gray-300">
+                                ${data.summary}
+                            </p>
+
+                            <!-- Cuellos de botella detectados -->
+                            <div class="bg-cyberBlack/70 border border-borderSubtle/70 rounded-xl p-3.5 space-y-2">
+                                <div class="text-[11px] font-mono font-bold text-nexusAmber uppercase tracking-wider">
+                                    ⚠️ Cuellos de Botella Típicos Detectados:
+                                </div>
+                                <ul class="text-xs text-gray-400 space-y-1.5">
+                                    ${bottlenecksList}
+                                </ul>
+                            </div>
+
+                            <!-- Arquitectura recomendada -->
+                            <div>
+                                <div class="text-[11px] font-mono font-bold text-nexusBlue uppercase tracking-wider mb-1.5">
+                                    ⚡ Arquitectura de Automatización NEXUS:
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed bg-darkSlate/60 p-3 rounded-xl border border-borderSubtle">
+                                    ${data.solution}
+                                </p>
+                            </div>
+
+                            <!-- Métricas de Impacto Estimadas -->
+                            <div class="grid grid-cols-3 gap-2 text-center pt-1 font-mono">
+                                <div class="bg-cyberBlack p-2 rounded-lg border border-borderSubtle">
+                                    <div class="text-[9px] text-gray-500 uppercase">Tiempo</div>
+                                    <div class="text-xs font-bold text-nexusGreen mt-0.5">${data.metrics.timeReduction}</div>
+                                </div>
+                                <div class="bg-cyberBlack p-2 rounded-lg border border-borderSubtle">
+                                    <div class="text-[9px] text-gray-500 uppercase">Precisión</div>
+                                    <div class="text-xs font-bold text-nexusBlue mt-0.5">${data.metrics.accuracy}</div>
+                                </div>
+                                <div class="bg-cyberBlack p-2 rounded-lg border border-borderSubtle">
+                                    <div class="text-[9px] text-gray-500 uppercase">Impacto</div>
+                                    <div class="text-xs font-bold text-nexusPurple mt-0.5">${data.metrics.fuelSavings}</div>
+                                </div>
+                            </div>
+
+                            <!-- Botones de Acción Inmediata -->
+                            <div class="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-borderSubtle">
+                                <span class="text-[11px] text-gray-400 font-mono">Módulo sugerido: <strong class="text-white">${data.suggestedModule}</strong></span>
+                                <button 
+                                    onclick="applyToAuditForm('${data.industryName}', '${data.suggestedModule}')"
+                                    class="bg-nexusBlue hover:bg-white text-black font-extrabold text-[11px] font-mono uppercase px-3.5 py-2 rounded-lg transition-all duration-300 flex items-center gap-1.5 shadow-[0_0_15px_rgba(0,240,255,0.3)]"
+                                >
+                                    <span>Cargar en Auditoría</span>
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+
+                chatMessages.insertAdjacentHTML('beforeend', aiMessageHTML);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1200);
+        }
+
+        // Cargar recomendación directamente en el formulario de auditoría
+        function applyToAuditForm(industryName, moduleName) {
+            const industryInput = document.getElementById('audit-industry');
+            if (industryInput) {
+                industryInput.value = `${industryName} [Stack: ${moduleName}]`;
+                industryInput.classList.add('border-nexusBlue');
+            }
+            
+            // Scroll suave hacia el formulario
+            const auditSection = document.getElementById('auditoria');
+            if (auditSection) {
+                auditSection.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            showToast(`Recomendación para "${industryName}" transferida a la Auditoría.`);
+        }
+
+        // Limpiar el historial del chat
+        function clearChatHistory() {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML = `
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-nexusBlue/20 border border-nexusBlue/40 text-nexusBlue flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs">
+                        NX
+                    </div>
+                    <div class="bg-darkCard border border-borderSubtle rounded-2xl rounded-tl-sm p-4 max-w-2xl text-gray-200 space-y-2">
+                        <div class="flex items-center justify-between text-[11px] font-mono text-gray-500 border-b border-borderSubtle/60 pb-1.5 mb-2">
+                            <span class="text-nexusBlue font-bold">NEXUS NEURAL ADVISOR</span>
+                            <span>SISTEMA REINICIADO</span>
+                        </div>
+                        <p>
+                            Sesión restablecida. Seleccione una industria arriba o ingrese una consulta para generar una nueva propuesta técnica.
+                        </p>
+                    </div>
+                </div>
+            `;
+            showToast("Historial del Asesor restablecido.");
+        }
+
+        // ==========================================
+        // 4. FORMULARIO DE AUDITORÍA CON RESPUESTA EN VIVO
+        // ==========================================
+        function handleAuditSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('audit-form');
+            const successBox = document.getElementById('audit-success');
+            const submitBtn = document.getElementById('audit-submit-btn');
+            const tokenEl = document.getElementById('audit-token');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
+
+            setTimeout(() => {
+                const randomToken = '#NX-' + Math.floor(1000 + Math.random() * 9000) + '-SEC';
+                if (tokenEl) tokenEl.textContent = randomToken;
+                
+                form.classList.add('hidden');
+                successBox.classList.remove('hidden');
+                showToast("Key-Session solicitada con éxito. Token generado: " + randomToken);
+            }, 1000);
+        }
+
+        // Helper para escapar HTML en inputs de usuario
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+    </script>
+</body>
+</html>
