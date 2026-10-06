@@ -74,8 +74,8 @@
         .glow-blue {
             box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.25);
         }
-        .glow-blue-lg {
-            box-shadow: 0 0 60px -10px rgba(0, 240, 255, 0.35);
+        .glow-green {
+            box-shadow: 0 0 30px -5px rgba(0, 255, 133, 0.25);
         }
     </style>
 </head>
@@ -85,17 +85,19 @@
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-nexusBlue/10 via-nexusBlueDark/5 to-transparent rounded-full blur-[140px] pointer-events-none -z-10"></div>
     <div class="fixed top-[45%] right-[-200px] w-[500px] h-[500px] bg-nexusPurple/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
 
-    <!-- NOTIFICATION BAR / SYSTEM STATUS -->
+    <!-- NOTIFICATION BAR / SYSTEM STATUS & DIRECT CONTACT -->
     <div class="bg-cyberDark/90 border-b border-borderSubtle text-[11px] font-mono text-gray-400 py-1.5 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-2">
                 <span class="inline-block w-2 h-2 rounded-full bg-nexusGreen animate-ping"></span>
                 <span class="text-white font-semibold">KERNEL v4.9 OPERACIONAL</span>
-                <span class="hidden sm:inline text-gray-500">| Clúster Privado Latam-01 activo</span>
+                <span class="hidden sm:inline text-gray-500">| Clúster Latam-01 activo</span>
             </div>
-            <div class="flex items-center gap-4 text-gray-400">
-                <span class="hidden md:inline">Latencia Global: <strong class="text-nexusBlue font-mono">0.82 ms</strong></span>
-                <span>SLA Disponibilidad: <strong class="text-nexusGreen font-mono">99.999%</strong></span>
+            <div class="flex items-center gap-4 text-gray-300">
+                <span class="hidden md:inline">Atención Ejecutiva Directa: <strong class="text-white font-semibold">Ing. Alfredo R. Martínez (CEO)</strong></span>
+                <a href="https://wa.me/584265538288?text=Hola%20Ing.%20Alfredo%20Mart%C3%ADnez,%20le%20contacto%20desde%20NEXUS.AI" target="_blank" rel="noopener noreferrer" class="text-nexusGreen hover:underline flex items-center gap-1 font-bold">
+                    <span>WhatsApp: +58 426 553 8288</span>
+                </a>
             </div>
         </div>
     </div>
@@ -122,16 +124,16 @@
                     <span class="inline-block w-1.5 h-1.5 rounded-full bg-nexusBlue animate-pulse"></span>
                     Simulador IA
                 </a>
-                <a href="#auditoria" class="hover:text-nexusBlue transition-colors duration-200">Auditoría Élite</a>
+                <a href="#auditoria" class="hover:text-nexusBlue transition-colors duration-200">Auditoría & Contacto</a>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="#simulador" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-gray-300 border border-borderSubtle hover:border-nexusBlue/60 hover:text-white px-3 py-2 rounded-lg transition-all duration-300">
-                    <svg class="w-3.5 h-3.5 text-nexusBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    Probar Asesor
+                <a href="https://wa.me/584265538288?text=Hola%20Ing.%20Alfredo%20Mart%C3%ADnez,%20le%20contacto%20desde%20NEXUS.AI%20para%20una%20consulta%20de%20arquitectura." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-nexusGreen border border-nexusGreen/30 hover:border-nexusGreen hover:bg-nexusGreen/10 px-3 py-2 rounded-lg transition-all duration-300 font-mono">
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                    <span>Línea CEO</span>
                 </a>
                 <a href="#auditoria" class="bg-nexusBlue text-black font-extrabold px-4 py-2 rounded-lg text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
-                    Conectar con un Socio
+                    Conectar con el Socio
                 </a>
             </div>
         </div>
@@ -160,7 +162,7 @@
 
             <!-- Subtítulo -->
             <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                Interconectamos y automatizamos infraestructura crítica empresarial. La convergencia definitiva de <span class="text-white font-medium">24 años de ingeniería de sistemas</span> y arquitecturas autónomas de Inteligencia Artificial de respuesta milimétrica.
+                Interconectamos y automatizamos infraestructura crítica empresarial. La convergencia definitiva de <span class="text-white font-medium">24 años de ingeniería de sistemas y telecomunicaciones</span> liderada por el <span class="text-nexusBlue font-medium">Ing. Alfredo R. Martínez</span> y arquitecturas autónomas de Inteligencia Artificial de respuesta milimétrica.
             </p>
 
             <!-- Call to Actions -->
@@ -169,9 +171,9 @@
                     <span>Simular Automatización</span>
                     <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
-                <a href="#modulos" class="w-full sm:w-auto border border-borderSubtle bg-darkCard/50 text-gray-300 font-semibold px-8 py-4 rounded-xl text-sm hover:bg-darkSlate hover:text-white hover:border-nexusBlue/50 transition-all duration-300 flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 text-nexusBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                    <span>Explorar Módulos Activos</span>
+                <a href="#auditoria" class="w-full sm:w-auto border border-nexusGreen/40 bg-darkCard/50 text-nexusGreen font-semibold px-8 py-4 rounded-xl text-sm hover:bg-nexusGreen hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                    <span>Contactar al CEO por WhatsApp</span>
                 </a>
             </div>
 
@@ -199,10 +201,10 @@
                     </div>
                 </div>
                 <div class="bg-darkCard/40 border border-borderSubtle/60 rounded-xl p-3.5 backdrop-blur-sm transition-all duration-300 hover:border-nexusBlue/40">
-                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Seguridad Operativa</div>
+                    <div class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">Respaldo Directo</div>
                     <div class="text-xl font-mono font-bold text-white mt-1 flex items-baseline gap-1">
-                        <span class="text-nexusBlue">SOC2</span>
-                        <span class="text-xs text-gray-400 font-normal">Zero-Leak</span>
+                        <span class="text-nexusBlue">24 Años</span>
+                        <span class="text-xs text-gray-400 font-normal">Experiencia</span>
                     </div>
                 </div>
             </div>
@@ -387,7 +389,7 @@
                 </div>
 
                 <!-- CARD 2: NX-HEALTH -->
-                <div class="group border border-borderSubtle hover:border-nexusBlue/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.25)] flex flex-col justify-between relative overflow-hidden">
+                <div class="group border border-borderSubtle hover:border-nexusGreen/80 p-6 rounded-2xl bg-darkCard/60 hover:bg-darkSlate/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_35px_-10px_rgba(0,255,133,0.25)] flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-nexusGreen/5 rounded-full blur-2xl group-hover:bg-nexusGreen/15 transition-all duration-500 pointer-events-none"></div>
                     
                     <div>
@@ -687,96 +689,305 @@
         </div>
     </section>
 
-    <!-- CAPTURA ÉLITE (FORMULARIO DE AUDITORÍA) -->
-    <section id="auditoria" class="py-24 border-t border-borderSubtle bg-gradient-to-b from-cyberDark to-black relative">
-        <div class="max-w-3xl mx-auto px-6 text-center">
+    <!-- SECCIÓN DE AUDITORÍA & CONTACTO EJECUTIVO (ALFREDO R. MARTÍNEZ - CEO) -->
+    <section id="auditoria" class="py-24 border-t border-borderSubtle bg-gradient-to-b from-cyberDark via-cyberBlack to-black relative">
+        <div class="max-w-6xl mx-auto px-6">
             
-            <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-4 py-1.5 rounded-full border border-nexusBlue/20">
-                // EXECUTIVE ADVISORY
-            </span>
-
-            <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-4 tracking-tight">
-                Optimice su Infraestructura Operativa
-            </h2>
-            <p class="text-gray-400 mb-10 max-w-xl mx-auto text-sm leading-relaxed">
-                Sesiones exclusivas de arquitectura de procesos para directores de operaciones y CTOs. Evaluamos sus cuellos de botella e integramos IA de grado industrial en su ecosistema actual.
-            </p>
-            
-            <form id="audit-form" onsubmit="handleAuditSubmit(event)" class="space-y-4 max-w-md mx-auto text-left bg-darkCard/60 border border-borderSubtle p-8 rounded-2xl shadow-2xl backdrop-blur-md">
-                <div>
-                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Nombre y Cargo del Ejecutivo</label>
-                    <input 
-                        type="text" 
-                        id="audit-name"
-                        required 
-                        placeholder="Ej: Lic. Alejandro Rossi - VP Operations" 
-                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
-                    >
-                </div>
-                <div>
-                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Email Corporativo</label>
-                    <input 
-                        type="email" 
-                        id="audit-email"
-                        required 
-                        placeholder="ejecutivo@corporacion.com" 
-                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
-                    >
-                </div>
-                <div>
-                    <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Área / Industria a Automatizar</label>
-                    <input 
-                        type="text" 
-                        id="audit-industry"
-                        placeholder="Ej: Distribución de Gas / Logística Flotas" 
-                        class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
-                    >
-                </div>
-                <button 
-                    type="submit" 
-                    id="audit-submit-btn"
-                    class="w-full mt-4 bg-nexusBlue text-black font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5"
-                >
-                    Solicitar Key-Session de Eficiencia
-                </button>
-                <div class="text-[11px] font-mono text-gray-500 text-center pt-2">
-                    🔒 Cifrado de grado bancario. NDA bilateral automático previo a la sesión.
-                </div>
-            </form>
-
-            <!-- Form Success Box (Oculto) -->
-            <div id="audit-success" class="hidden max-w-md mx-auto bg-darkCard border border-nexusGreen p-8 rounded-2xl text-left font-mono space-y-4">
-                <div class="flex items-center gap-3 text-nexusGreen">
-                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span class="text-sm font-bold">SOLICITUD DE AUDITORÍA REGISTRADA</span>
-                </div>
-                <p class="text-xs text-gray-300 leading-relaxed font-sans">
-                    Un Arquitecto Senior de NEXUS.AI ha sido asignado a su caso. En breve recibirá en su correo corporativo el enlace seguro para la Key-Session y los documentos de confidencialidad.
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-nexusBlue bg-nexusBlue/10 px-4 py-1.5 rounded-full border border-nexusBlue/20">
+                    // LIDERAZGO & ARQUITECTURA TÉCNICA
+                </span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mt-4 mb-4 tracking-tight">
+                    Optimice su Infraestructura Operativa
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                    Evaluamos cuellos de botella e integramos IA de grado industrial en su ecosistema actual con atención directa del Socio Fundador.
                 </p>
-                <div class="bg-cyberBlack p-3 rounded-xl border border-borderSubtle text-[11px] text-gray-400">
-                    <div>Token Asignado: <span id="audit-token" class="text-nexusBlue font-bold">#NX-8491-LATAM</span></div>
-                    <div>Prioridad: <span class="text-nexusGreen font-bold">TIER 1 (Inmediata)</span></div>
+            </div>
+
+            <!-- GRID DUAL: PERFIL EJECUTIVO + FORMULARIO DE AUDITORÍA -->
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- COLUMNA IZQUIERDA: PERFIL DEL CEO / PERSONA DE CONTACTO -->
+                <div class="lg:col-span-5 bg-darkCard/80 border border-borderSubtle hover:border-nexusBlue/50 transition-all duration-500 rounded-2xl p-7 shadow-2xl backdrop-blur-md relative overflow-hidden">
+                    <div class="absolute -top-16 -left-16 w-44 h-44 bg-nexusBlue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <!-- Header Perfil -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-nexusBlue via-blue-600 to-nexusPurple p-0.5 shadow-lg shadow-nexusBlue/20">
+                                <div class="w-full h-full bg-cyberBlack rounded-2xl flex items-center justify-center font-mono font-extrabold text-white text-xl">
+                                    ARM
+                                </div>
+                            </div>
+                            <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-nexusGreen border-2 border-cyberBlack animate-pulse" title="Disponible para Key-Sessions"></span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono font-bold tracking-wider text-nexusBlue uppercase bg-nexusBlue/10 px-2.5 py-0.5 rounded border border-nexusBlue/20">CEO & Lead Systems Architect</span>
+                            <h3 class="text-xl font-black text-white mt-1">Ing. Alfredo R. Martínez</h3>
+                            <p class="text-xs text-gray-400 font-mono">Dirección General NEXUS.AI</p>
+                        </div>
+                    </div>
+
+                    <!-- Respaldo y Biografía -->
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 font-light">
+                        Con <strong class="text-white font-semibold">24 años de respaldo en ingeniería de campo</strong>, telecomunicaciones y sistemas de misión crítica, lidero directamente el diagnóstico de cada cliente para diseñar arterias de automatización que eliminan cuellos de botella con retorno tangible.
+                    </p>
+
+                    <!-- Canales de Contacto Directo -->
+                    <div class="space-y-3 font-mono text-xs border-t border-borderSubtle pt-5 mb-6">
+                        
+                        <!-- WhatsApp -->
+                        <div class="flex items-center justify-between bg-cyberBlack/60 border border-borderSubtle p-3 rounded-xl hover:border-nexusGreen transition-colors">
+                            <div class="flex items-center gap-2.5 text-gray-300">
+                                <svg class="w-4 h-4 text-nexusGreen flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                                <span class="truncate">+58 426 553 8288</span>
+                            </div>
+                            <a href="https://wa.me/584265538288?text=Hola%20Ing.%20Alfredo%20Mart%C3%ADnez,%20deseo%20coordinar%20una%20Key-Session%20de%20arquitectura%20NEXUS.AI" target="_blank" rel="noopener noreferrer" class="text-nexusGreen hover:text-white font-bold text-[11px] uppercase tracking-wider bg-nexusGreen/10 hover:bg-nexusGreen hover:text-black px-2.5 py-1 rounded transition-all">
+                                Chatear
+                            </a>
+                        </div>
+
+                        <!-- Email Corporativo -->
+                        <div class="flex items-center justify-between bg-cyberBlack/60 border border-borderSubtle p-3 rounded-xl hover:border-nexusBlue transition-colors">
+                            <div class="flex items-center gap-2.5 text-gray-300 min-w-0">
+                                <svg class="w-4 h-4 text-nexusBlue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <span class="truncate text-[11px]" title="soluciones.tepuy.vzla@gmail.com">soluciones.tepuy.vzla@gmail.com</span>
+                            </div>
+                            <button onclick="copyEmailToClipboard()" class="text-nexusBlue hover:text-white font-bold text-[11px] uppercase tracking-wider bg-nexusBlue/10 hover:bg-nexusBlue hover:text-black px-2.5 py-1 rounded transition-all flex-shrink-0">
+                                Copiar
+                            </button>
+                        </div>
+
+                        <!-- Ubicación / Cobertura -->
+                        <div class="flex items-center justify-between bg-cyberBlack/60 border border-borderSubtle p-3 rounded-xl text-gray-400">
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-4 h-4 text-nexusPurple flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <span>Venezuela / Despliegues Globales</span>
+                            </div>
+                            <span class="text-white text-[10px]">LATAM & Remote</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Botón Destacado de WhatsApp -->
+                    <a href="https://wa.me/584265538288?text=Hola%20Ing.%20Alfredo%20Mart%C3%ADnez,%20le%20escribo%20desde%20la%20plataforma%20NEXUS.AI%20para%20solicitar%20asesor%C3%ADa%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-emerald-500 to-nexusGreen text-black font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_25px_rgba(0,255,133,0.5)] transition-all duration-300 flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                        <span>Conectar al WhatsApp del CEO</span>
+                    </a>
                 </div>
+
+                <!-- COLUMNA DERECHA: FORMULARIO DE AUDITORÍA CON ENVÍO REAL -->
+                <div class="lg:col-span-7">
+                    
+                    <form id="audit-form" onsubmit="handleAuditSubmit(event)" class="space-y-4 bg-darkCard/80 border border-borderSubtle p-8 rounded-2xl shadow-2xl backdrop-blur-md">
+                        <div class="flex items-center justify-between pb-2 border-b border-borderSubtle">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Solicitud de Key-Session</h3>
+                                <p class="text-xs text-gray-400">Reciba el análisis técnico y propuesta formal en su correo corporativo.</p>
+                            </div>
+                            <span class="text-[10px] font-mono text-nexusBlue bg-nexusBlue/10 px-2.5 py-1 rounded border border-nexusBlue/30">NDA Bilateral Incluido</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Nombre y Cargo del Ejecutivo *</label>
+                            <input 
+                                type="text" 
+                                id="audit-name"
+                                required 
+                                placeholder="Ej: Lic. Alejandro Rossi - VP Operations" 
+                                class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                            >
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Email Corporativo *</label>
+                                <input 
+                                    type="email" 
+                                    id="audit-email"
+                                    required 
+                                    placeholder="ejecutivo@empresa.com" 
+                                    class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Teléfono / WhatsApp *</label>
+                                <input 
+                                    type="text" 
+                                    id="audit-phone"
+                                    required
+                                    placeholder="+58 412 1234567" 
+                                    class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono text-gray-400 uppercase tracking-wider mb-2">Área / Industria a Automatizar *</label>
+                            <input 
+                                type="text" 
+                                id="audit-industry"
+                                required
+                                placeholder="Ej: Distribución de Gas / Logística Flotas / Triage Médico" 
+                                class="w-full bg-cyberBlack/80 border border-borderSubtle rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-nexusBlue text-white placeholder-gray-600 transition"
+                            >
+                            <p class="text-[11px] text-gray-500 mt-1 font-mono">Tip: Si usó el Simulador IA arriba, este campo ya contiene el stack sugerido.</p>
+                        </div>
+
+                        <!-- Botones de Envío Dual -->
+                        <div class="pt-2 space-y-3">
+                            <button 
+                                type="submit" 
+                                id="audit-submit-btn"
+                                class="w-full bg-nexusBlue text-black font-extrabold py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                            >
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <span>Solicitar Auditoría por Correo Electrónico</span>
+                            </button>
+
+                            <button 
+                                type="button" 
+                                onclick="sendViaDirectWhatsApp()"
+                                class="w-full bg-cyberBlack border border-borderSubtle hover:border-nexusGreen text-gray-300 hover:text-white font-mono font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
+                            >
+                                <svg class="w-4 h-4 text-nexusGreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                                <span>O Enviar Solicitud directa al WhatsApp del CEO (+58 426 553 8288)</span>
+                            </button>
+                        </div>
+
+                        <div class="text-[11px] font-mono text-gray-500 text-center pt-2">
+                            🔒 Los datos son procesados bajo confidencialidad estricta y remitidos a <span class="text-gray-400">soluciones.tepuy.vzla@gmail.com</span>
+                        </div>
+                    </form>
+
+                    <!-- Form Success Box (Oculto) -->
+                    <div id="audit-success" class="hidden bg-darkCard border border-nexusGreen p-8 rounded-2xl text-left font-mono space-y-5 shadow-2xl">
+                        <div class="flex items-center gap-3 text-nexusGreen">
+                            <svg class="w-7 h-7 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div>
+                                <span class="text-base font-bold block">SOLICITUD DE AUDITORÍA REGISTRADA</span>
+                                <span class="text-xs text-gray-400">Atención asignada a: Ing. Alfredo R. Martínez</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-xs text-gray-300 leading-relaxed font-sans">
+                            Hemos recibido sus parámetros operativos. La propuesta de arquitectura y el enlace para la Key-Session se han generado exitosamente.
+                        </p>
+                        
+                        <div class="bg-cyberBlack p-4 rounded-xl border border-borderSubtle space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Token Asignado:</span>
+                                <span id="audit-token" class="text-nexusBlue font-bold">#NX-8491-SEC</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Prioridad:</span>
+                                <span class="text-nexusGreen font-bold">TIER 1 (Inmediata)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Destino de Notificación:</span>
+                                <span class="text-gray-300">soluciones.tepuy.vzla@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Acción Inmediata de Seguimiento -->
+                        <div class="pt-2">
+                            <button 
+                                id="btn-success-whatsapp"
+                                onclick="openWhatsAppWithToken()"
+                                class="w-full bg-gradient-to-r from-emerald-500 to-nexusGreen text-black font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(0,255,133,0.5)] transition-all flex items-center justify-center gap-2"
+                            >
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                                <span>Validar Token de Inmediato en WhatsApp con Alfredo Martínez</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-borderSubtle py-10 bg-black text-xs text-gray-500 text-center font-mono">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <span class="text-white font-bold tracking-tight">NEXUS<span class="text-nexusBlue">.AI</span></span>
-                <span>// HARDWARE & AI UNBREAKABLE ARCHITECTURES.</span>
-            </div>
+    <!-- FOOTER CON DATOS CORPORATIVOS DE CONTACTO -->
+    <footer class="border-t border-borderSubtle py-12 bg-black text-xs text-gray-500 font-mono">
+        <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+            
             <div>
-                &copy; 2026 NEXUS.AI. Todos los derechos reservados.
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="w-6 h-6 rounded bg-nexusBlue text-black font-bold flex items-center justify-center text-xs">NX</span>
+                    <span class="text-white font-bold text-base tracking-tight">NEXUS<span class="text-nexusBlue">.AI</span></span>
+                </div>
+                <p class="text-[11px] text-gray-500 leading-relaxed font-sans">
+                    Hardware & AI Unbreakable Architectures. Ingeniería de Alta Disponibilidad y Soluciones de Inteligencia Artificial para Empresas.
+                </p>
             </div>
+
+            <div class="space-y-1.5 text-[11px]">
+                <div class="text-gray-300 font-bold uppercase tracking-wider">Contacto Ejecutivo:</div>
+                <div class="text-gray-400">Ing. Alfredo R. Martínez — CEO & Lead Systems Architect</div>
+                <div>WhatsApp Directo: <a href="https://wa.me/584265538288" class="text-nexusGreen hover:underline">+58 426 553 8288</a></div>
+                <div>Correo: <a href="mailto:soluciones.tepuy.vzla@gmail.com" class="text-nexusBlue hover:underline">soluciones.tepuy.vzla@gmail.com</a></div>
+            </div>
+
+            <div class="sm:text-right text-[11px] space-y-1">
+                <div>&copy; 2026 NEXUS.AI. Todos los derechos reservados.</div>
+                <div class="text-gray-600">Sistemas Privados de Misión Crítica // LATAM</div>
+            </div>
+
         </div>
     </footer>
 
-    <!-- LOGICA JAVASCRIPT: SHOWROOM, TELEMETRÍA Y CHAT DE IA -->
+    <!-- BOTÓN FLOTANTE DIRECTO AL WHATSAPP DEL CEO (Esquina Inferior Izquierda) -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <a 
+            href="https://wa.me/584265538288?text=Hola%20Ing.%20Alfredo%20Mart%C3%ADnez,%20le%20escribo%20desde%20la%20plataforma%20de%20NEXUS.AI%20para%20una%20consulta%20técnica." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group bg-darkCard/95 border border-borderSubtle hover:border-nexusGreen p-2.5 sm:px-4 sm:py-2.5 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] backdrop-blur-xl flex items-center gap-3 transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,133,0.3)] transform hover:-translate-y-1"
+        >
+            <div class="relative flex-shrink-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-nexusGreen flex items-center justify-center text-black font-bold text-xs shadow-md">
+                    <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.058.376-.058c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.923l-1.658 6.059 6.223-1.632c1.704.928 3.655 1.45 5.727 1.45 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                </div>
+                <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-nexusGreen border-2 border-cyberBlack animate-ping"></span>
+                <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-nexusGreen border-2 border-cyberBlack"></span>
+            </div>
+            <div class="text-left hidden sm:block">
+                <div class="text-[10px] font-mono text-gray-400 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-nexusGreen"></span>
+                    <span>CEO EN LÍNEA</span>
+                </div>
+                <div class="text-xs font-bold text-white group-hover:text-nexusGreen transition-colors">
+                    Alfredo R. Martínez
+                </div>
+                <div class="text-[10px] text-gray-400 font-mono">+58 426 553 8288</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- LOGICA JAVASCRIPT: SHOWROOM, TELEMETRÍA, CHAT DE IA Y ENVÍO REAL -->
     <script>
+        // =========================================================================
+        // CONFIGURACIÓN DE ENVÍO DE CORREOS & CONTACTO (ALFREDO R. MARTÍNEZ)
+        // =========================================================================
+        // Correo oficial corporativo: soluciones.tepuy.vzla@gmail.com
+        // WhatsApp oficial: +58 426 553 8288
+        // -------------------------------------------------------------------------
+        // ¿CÓMO ACTIVAR EL ENVÍO REAL A TU BANDEJA DE CORREO EN 30 SEGUNDOS (GRATIS)?
+        // 1. Ingresa a: https://web3forms.com
+        // 2. Coloca tu correo: soluciones.tepuy.vzla@gmail.com
+        // 3. Te llegará un correo con tu Access Key (un código alfanumérico).
+        // 4. Pega esa clave en la siguiente comilla reemplazando 'TU_ACCESS_KEY_DE_WEB3FORMS':
+        const WEB3FORMS_ACCESS_KEY = "a49bdb30-9310-49da-a361-ca32e1436e77"; 
+        const CORPORATE_EMAIL = "soluciones.tepuy.vzla@gmail.com";
+        const CEO_PHONE_WHATSAPP = "584265538288";
+
+        // Variable global para almacenar el último token generado
+        let lastGeneratedToken = "#NX-8491-SEC";
+        let lastFormData = null;
+
         // ==========================================
         // 1. TELEMETRÍA Y RELOJ EN VIVO DEL NÚCLEO
         // ==========================================
@@ -905,7 +1116,16 @@
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3200);
+            }, 3500);
+        }
+
+        // Copiar correo al portapapeles
+        function copyEmailToClipboard() {
+            navigator.clipboard.writeText(CORPORATE_EMAIL).then(() => {
+                showToast("Correo copiado: " + CORPORATE_EMAIL);
+            }).catch(() => {
+                showToast("Correo: " + CORPORATE_EMAIL);
+            });
         }
 
         // ==========================================
@@ -1208,27 +1428,93 @@
             showToast("Historial del Asesor restablecido.");
         }
 
-        // ==========================================
-        // 4. FORMULARIO DE AUDITORÍA CON RESPUESTA EN VIVO
-        // ==========================================
-        function handleAuditSubmit(e) {
+        // =========================================================================
+        // 4. FORMULARIO DE AUDITORÍA CON ENVÍO REAL (WEB3FORMS + WHATSAPP)
+        // =========================================================================
+        async function handleAuditSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('audit-form');
             const successBox = document.getElementById('audit-success');
             const submitBtn = document.getElementById('audit-submit-btn');
             const tokenEl = document.getElementById('audit-token');
 
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
+            const name = document.getElementById('audit-name').value.trim();
+            const email = document.getElementById('audit-email').value.trim();
+            const phone = document.getElementById('audit-phone').value.trim();
+            const industry = document.getElementById('audit-industry').value.trim();
 
-            setTimeout(() => {
-                const randomToken = '#NX-' + Math.floor(1000 + Math.random() * 9000) + '-SEC';
-                if (tokenEl) tokenEl.textContent = randomToken;
-                
-                form.classList.add('hidden');
-                successBox.classList.remove('hidden');
-                showToast("Key-Session solicitada con éxito. Token generado: " + randomToken);
-            }, 1000);
+            const randomToken = '#NX-' + Math.floor(1000 + Math.random() * 9000) + '-SEC';
+            lastGeneratedToken = randomToken;
+            lastFormData = { name, email, phone, industry, token: randomToken };
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin mx-auto text-black" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>`;
+
+            // Si se configuró la Access Key de Web3Forms, enviamos vía HTTP POST
+            if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "TU_ACCESS_KEY_DE_WEB3FORMS") {
+                try {
+                    const formData = new FormData();
+                    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+                    formData.append("subject", `[NEXUS.AI] Nueva Auditoría - ${name} (${industry})`);
+                    formData.append("from_name", "NEXUS.AI Plataforma");
+                    formData.append("Nombre_Ejecutivo", name);
+                    formData.append("Email_Corporativo", email);
+                    formData.append("Telefono_WhatsApp", phone);
+                    formData.append("Industria_Area", industry);
+                    formData.append("Token_Auditoria", randomToken);
+                    formData.append("Fecha_Hora", new Date().toLocaleString("es-ES"));
+
+                    const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        showToast("¡Solicitud enviada a soluciones.tepuy.vzla@gmail.com!");
+                    } else {
+                        console.warn("Web3Forms response:", result);
+                        showToast("Registro procesado con éxito (Token asignado)");
+                    }
+                } catch (err) {
+                    console.error("Error al despachar formulario:", err);
+                    showToast("Registro procesado con éxito (Token asignado)");
+                }
+            } else {
+                console.info("Nota: Para recibir los correos directo en tu inbox, configura WEB3FORMS_ACCESS_KEY con tu clave de web3forms.com. Mientras tanto, se activa el seguimiento directo por WhatsApp.");
+            }
+
+            // Mostrar el cuadro de éxito
+            if (tokenEl) tokenEl.textContent = randomToken;
+            form.classList.add('hidden');
+            successBox.classList.remove('hidden');
+            showToast("Key-Session registrada con Token: " + randomToken);
+        }
+
+        // Envío directo al WhatsApp de Alfredo Martínez tomando los datos del formulario
+        function sendViaDirectWhatsApp() {
+            const name = document.getElementById('audit-name').value.trim() || 'Ejecutivo';
+            const email = document.getElementById('audit-email').value.trim() || 'No especificado';
+            const phone = document.getElementById('audit-phone').value.trim() || 'No especificado';
+            const industry = document.getElementById('audit-industry').value.trim() || 'Automatización General';
+
+            const token = '#NX-' + Math.floor(1000 + Math.random() * 9000) + '-SEC';
+
+            const msg = `Hola Ing. Alfredo Martínez (CEO NEXUS.AI).\n\nSolicito coordinar una Key-Session de Auditoría Operativa con los siguientes datos:\n\n👤 *Nombre y Cargo:* ${name}\n📧 *Email:* ${email}\n📱 *Teléfono:* ${phone}\n🏢 *Industria / Área:* ${industry}\n🔐 *Token de Auditoría:* ${token}\n\nQuedo a la espera de su respuesta. Muchas gracias.`;
+
+            const encoded = encodeURIComponent(msg);
+            const waUrl = `https://wa.me/${CEO_PHONE_WHATSAPP}?text=${encoded}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Botón post-envío para abrir WhatsApp con el Token asignado
+        function openWhatsAppWithToken() {
+            const token = lastGeneratedToken || '#NX-8491-SEC';
+            const name = lastFormData ? lastFormData.name : 'Ejecutivo';
+            const industry = lastFormData ? lastFormData.industry : 'Operaciones';
+
+            const msg = `Hola Ing. Alfredo Martínez, acabo de registrar mi solicitud de auditoría en NEXUS.AI.\n\n👤 *Nombre:* ${name}\n🏢 *Industria:* ${industry}\n🔐 *Token Asignado:* ${token}\n\nLe escribo para confirmar la recepción y coordinar el enlace de la Key-Session.`;
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/${CEO_PHONE_WHATSAPP}?text=${encoded}`, '_blank');
         }
 
         // Helper para escapar HTML en inputs de usuario

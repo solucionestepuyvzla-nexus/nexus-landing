@@ -1,0 +1,9 @@
+1. Preparar los cambios:powershell
+git add .
+Usa el código con precaución.
+2. Guardar la versión:powershell
+git commit -m "Explicación breve de lo que cambiaste"
+Usa el código con precaución.
+3. Subir a la nube:powershell
+git push
+Usa el código con precaución.
