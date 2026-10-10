@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="800" height="160">
+  <defs>
+    <linearGradient id="gW" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="55%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="86" text-anchor="middle" font-family="Montserrat, 'Segoe UI', Arial, sans-serif"
+        font-size="64" font-weight="800" letter-spacing="2">
+    <tspan fill="#0B2A4A">TEPUY</tspan><tspan fill="url(#gW)">NEXUS</tspan>
+  </text>
+  <text x="400" y="128" text-anchor="middle" font-family="Montserrat, 'Segoe UI', Arial, sans-serif"
+        font-size="21" font-weight="500" letter-spacing="6" fill="#0B2A4A" opacity="0.75">
+    AI SOFTWARE &#183; BUSINESS CONSULTING
+  </text>
+</svg>
