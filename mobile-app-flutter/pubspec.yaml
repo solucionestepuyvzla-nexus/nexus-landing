@@ -1,0 +1,31 @@
+name: tepuy_condo_nexus_mobile
+description: "Ecosistema SaaS Multi-Tenant - App Móvil del Residente con Modo Senior y Accesibilidad Radical"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+  dio: ^5.4.1
+  flutter_riverpod: ^2.5.1
+  shared_preferences: ^2.2.2
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/logos/
+

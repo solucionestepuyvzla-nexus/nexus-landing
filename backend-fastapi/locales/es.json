@@ -1,0 +1,27 @@
+{
+  "errors": {
+    "license_expired": "La licencia del edificio {building_name} se encuentra vencida o suspendida. Por favor renueve la suscripción para continuar.",
+    "license_cancelled": "La licencia del edificio ha sido cancelada definitivamente.",
+    "unauthorized": "Credenciales inválidas o sesión expirada.",
+    "forbidden": "No posee permisos suficientes para ejecutar esta acción.",
+    "tenant_required": "Debe especificar la cabecera 'X-Tenant-ID' con un identificador de edificio válido.",
+    "building_not_found": "El edificio especificado no existe en el sistema.",
+    "unit_not_found": "La unidad habitacional indicada no fue encontrada.",
+    "insufficient_funds": "El monto del pago no puede ser menor o igual a cero.",
+    "duplicate_payment": "Se ha detectado un reporte de pago duplicado con la misma clave de idempotencia o número de referencia.",
+    "senior_mode_active": "Modo Senior activo. Interfaz simplificada para adultos mayores."
+  },
+  "notifications": {
+    "payment_received": "Se ha registrado su comprobante de pago por {amount} {currency}. En proceso de revisión.",
+    "payment_approved": "Su pago de alícuota por {amount} {currency} ha sido verificado satisfactoriamente.",
+    "new_circular": "Nueva circular publicada por la Junta de Condominio: {title}",
+    "failure_reported": "Su reporte de falla técnica (#{ticket_id}) ha sido recibido y asignado a mantenimiento."
+  },
+  "common": {
+    "active": "Activo",
+    "suspended": "Suspendido",
+    "grace_period": "Período de Gracia",
+    "trial": "Evaluación"
+  }
+}
+

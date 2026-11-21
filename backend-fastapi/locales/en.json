@@ -1,0 +1,27 @@
+{
+  "errors": {
+    "license_expired": "The license for building {building_name} has expired or is suspended. Please renew the subscription to continue.",
+    "license_cancelled": "The building license has been permanently cancelled.",
+    "unauthorized": "Invalid credentials or session expired.",
+    "forbidden": "You do not have sufficient permissions to execute this action.",
+    "tenant_required": "You must provide the 'X-Tenant-ID' header with a valid building identifier.",
+    "building_not_found": "The specified building does not exist in the system.",
+    "unit_not_found": "The indicated apartment unit was not found.",
+    "insufficient_funds": "The payment amount cannot be less than or equal to zero.",
+    "duplicate_payment": "A duplicate payment report has been detected with the same idempotency key or reference number.",
+    "senior_mode_active": "Senior Mode active. Simplified interface for elderly users."
+  },
+  "notifications": {
+    "payment_received": "Your payment receipt for {amount} {currency} has been registered. Pending review.",
+    "payment_approved": "Your aliquot payment of {amount} {currency} has been successfully verified.",
+    "new_circular": "New circular published by the Condominium Board: {title}",
+    "failure_reported": "Your technical failure report (#{ticket_id}) has been received and assigned to maintenance."
+  },
+  "common": {
+    "active": "Active",
+    "suspended": "Suspended",
+    "grace_period": "Grace Period",
+    "trial": "Trial"
+  }
+}
+

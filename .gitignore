@@ -1,0 +1,89 @@
+# ==========================================
+# TEPUY CONDO NEXUS - GLOBAL GITIGNORE
+# ==========================================
+
+# Node & Frontend Build Artifacts
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+*.local
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python & Backend Artifacts
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+ENV/
+env/
+.coverage
+htmlcov/
+*.sqlite3
+
+# Flutter & Dart Mobile App Artifacts
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+**/build/
+ios/Pods/
+ios/.symlinks/
+android/.gradle/
+android/captures/
+android/local.properties
+**/ios/Flutter/ephemeral/
+**/macos/Flutter/ephemeral/
+**/windows/flutter/ephemeral/
+**/linux/flutter/ephemeral/
+**/ios/Flutter/.last_build_id
+**/doc/api/
+
+# Operating System & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+~$*
+
+# Temporary Edge & Headless Test Data Dirs
+.edge_*
+
+# Screenshot artifacts & local capture logs
+landing_page_*.png
+landing_to_login.png
+portal*.png
+captura_pantalla/
+trabajo_composer.txt
