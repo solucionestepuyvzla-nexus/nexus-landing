@@ -1,0 +1,95 @@
+# ==============================================================================
+# TEPUY CONDO NEXUS - DOCKER COMPOSE PRODUCCIÓN (BANCA PRIVADA / ALTA ESCALA)
+# Orquestación de Base de Datos PostgreSQL 16 (RLS), Redis 7, FastAPI y Cloudflare Tunnel
+# Cero puertos públicos abiertos: Todo el tráfico HTTPS entra vía Cloudflare Tunnel
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------
+  # 1. BASE DE DATOS FIDUCIARIA (POSTGRESQL 16)
+  # ----------------------------------------------------
+  db:
+    image: postgres:16-alpine
+    container_name: tepuy_postgres_prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-tepuy_condo_db}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-tepuy_condo_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - tepuy_prod_network
+
+  # ----------------------------------------------------
+  # 2. MOTOR DE CACHÉ Y SESIÓN (REDIS 7)
+  # ----------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: tepuy_redis_prod
+    restart: always
+    command: redis-server --appendonly yes --requirepass "${REDIS_PASSWORD}"
+    volumes:
+      - redis_prod_data:/data
+    networks:
+      - tepuy_prod_network
+
+  # ----------------------------------------------------
+  # 3. BACKEND ASÍNCRONO FASTAPI (1M+ CONCURRENCIA)
+  # ----------------------------------------------------
+  backend:
+    build:
+      context: ./backend-fastapi
+      dockerfile: Dockerfile
+    container_name: tepuy_backend_prod
+    restart: always
+    environment:
+      - ENVIRONMENT=production
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB:-tepuy_condo_db}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - SECRET_KEY=${SECRET_KEY}
+      - CORS_ORIGINS=["https://condominios.tepuynexus.com","https://tepuynexus.com","https://www.tepuynexus.com"]
+      - CORS_ORIGIN_REGEX=https://.*\.vercel\.app
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - tepuy_prod_network
+
+  # ----------------------------------------------------
+  # 4. CLOUDFLARE ZERO TRUST TUNNEL (BLINDAJE DE ENTRADA)
+  # ----------------------------------------------------
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: tepuy_tunnel_prod
+    restart: always
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - backend
+    networks:
+      - tepuy_prod_network
+
+volumes:
+  postgres_prod_data:
+    driver: local
+  redis_prod_data:
+    driver: local
+
+networks:
+  tepuy_prod_network:
+    driver: bridge

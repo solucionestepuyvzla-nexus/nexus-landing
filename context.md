@@ -349,6 +349,17 @@ A solicitud de Alfredo R. Martínez (CEO) y en concordancia con la Regla 8 de `A
   - Pestaña integrada de "Prospectos B2B (Inbound)" con tabla fiduciaria de solicitudes, métricas en vivo, folio copiable, información de contacto y selector dinámico de estado (`NUEVO`, `CONTACTADO`, `DEMO_AGENDADA`, `CONVERTIDO`, `DESCARTADO`).
   - Compilación limpia con 0 errores TypeScript (`npm run build`), paridad i18n al 100% en `es.json` y `en.json`, y verificación visual fotográfica completa.
 
+### 10.11 Infraestructura Cloud de Producción (Vercel, Cloudflare & VPS Tunnel - Noviembre 2026)
+* **Frontend Web & Landing Page en Vercel Edge (`condominios.tepuynexus.com`):**
+  - Archivo `vercel.json` configurado con reescrituras SPA para Vite (`"source": "/(.*)", "destination": "/index.html"`) evitando errores 404 al recargar rutas con hash/deep-linking.
+  - Cabeceras de seguridad de grado bancario inyectadas en cada respuesta (HSTS preload de 1 año, X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Referrer-Policy: strict-origin-when-cross-origin).
+  - Repositorio GitHub sincronizado en rama `main` (`solucionestepuyvzla-nexus/nexus-landing`).
+  - Dominio personalizado asignado: `condominios.tepuynexus.com` con CNAME `cname.vercel-dns.com` protegido por Cloudflare SSL en modo **Full (Strict)**.
+* **Backend Asíncrono & Base de Datos en VPS Cloud (`api-condominios.tepuynexus.com`):**
+  - Preparación de orquestación en `docker-compose.prod.yml` que encapsula PostgreSQL 16 (RLS), Redis 7 y FastAPI.
+  - Integración de **Cloudflare Zero Trust Tunnel** (`cloudflared`): Cero puertos públicos abiertos en el firewall del VPS. Todo el tráfico hacia `api-condominios.tepuynexus.com` entra por túnel seguro cifrado punto a punto directo al contenedor backend en puerto 8000.
+  - CORS endurecido en FastAPI con inclusión explícita de `https://condominios.tepuynexus.com` y regex para previews de Vercel.
+
 ---
 
 ## 11. ROADMAP TÉCNICO Y PRÓXIMOS PASOS OPERACIONALES
