@@ -257,6 +257,16 @@ Cualquier agente o ingeniero que retome este proyecto debe considerar como líne
      - Pestaña integrada de "Prospectos B2B (Inbound)" con tabla fiduciaria de solicitudes, métricas en vivo, folio copiable, información de contacto y selector dinámico de estado (`NUEVO`, `CONTACTADO`, `DEMO_AGENDADA`, `CONVERTIDO`, `DESCARTADO`).
      - Compilación limpia con 0 errores TypeScript (`npm run build`), paridad i18n al 100% en `es.json` y `en.json`, y verificación visual fotográfica completa.
 
+10. **Despliegue y Arquitectura Cloud de Producción (Vercel, Cloudflare & VPS Tunnel - Noviembre 2026):**
+    * **Frontend Web & Landing Page en Vercel Edge (`condominios.tepuynexus.com`):**
+      - Despliegue estático SPA optimizado con `vercel.json` y cabeceras de seguridad de banca privada (HSTS 1 año, X-Frame-Options: DENY, X-Content-Type-Options: nosniff).
+      - Configuración CNAME en Cloudflare hacia `cname.vercel-dns.com` con SSL/TLS en modo **Full (Strict)**.
+      - Sincronización continua con repositorio GitHub `solucionestepuyvzla-nexus/nexus-landing`.
+    * **Backend Asíncrono & Base de Datos en VPS Cloud (`api-condominios.tepuynexus.com`):**
+      - Orquestación lista para producción en `docker-compose.prod.yml` que encapsula PostgreSQL 16 (RLS), Redis 7 y FastAPI.
+      - Integración de **Cloudflare Zero Trust Tunnel** (`cloudflared`): Cero puertos públicos expuestos en el VPS. Todo el tráfico API entra cifrado de extremo a extremo hacia el puerto 8000.
+      - Endurecimiento de CORS para dominios corporativos autorizados (`condominios.tepuynexus.com`, `tepuynexus.com`, `www.tepuynexus.com`).
+
 ---
 
 ## 6. ANÁLISIS FORENSE DE DEUDA TÉCNICA: LO QUE FALTA PARA EL ESTÁNDAR DE EXCELENCIA Y CERO HARDCODEO (OCTUBRE 2026)
