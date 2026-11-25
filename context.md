@@ -351,14 +351,20 @@ A solicitud de Alfredo R. Martínez (CEO) y en concordancia con la Regla 8 de `A
 
 ### 10.11 Infraestructura Cloud de Producción (Vercel, Cloudflare & VPS Tunnel - Noviembre 2026)
 * **Frontend Web & Landing Page en Vercel Edge (`condominios.tepuynexus.com`):**
+  - Desplegado y verificado en vivo con **HTTP 200 OK**, certificados SSL gestionados por Cloudflare en modo **Full (Strict)**.
   - Archivo `vercel.json` configurado con reescrituras SPA para Vite (`"source": "/(.*)", "destination": "/index.html"`) evitando errores 404 al recargar rutas con hash/deep-linking.
   - Cabeceras de seguridad de grado bancario inyectadas en cada respuesta (HSTS preload de 1 año, X-Frame-Options: DENY, X-Content-Type-Options: nosniff, Referrer-Policy: strict-origin-when-cross-origin).
   - Repositorio GitHub sincronizado en rama `main` (`solucionestepuyvzla-nexus/nexus-landing`).
-  - Dominio personalizado asignado: `condominios.tepuynexus.com` con CNAME `cname.vercel-dns.com` protegido por Cloudflare SSL en modo **Full (Strict)**.
-* **Backend Asíncrono & Base de Datos en VPS Cloud (`api-condominios.tepuynexus.com`):**
-  - Preparación de orquestación en `docker-compose.prod.yml` que encapsula PostgreSQL 16 (RLS), Redis 7 y FastAPI.
-  - Integración de **Cloudflare Zero Trust Tunnel** (`cloudflared`): Cero puertos públicos abiertos en el firewall del VPS. Todo el tráfico hacia `api-condominios.tepuynexus.com` entra por túnel seguro cifrado punto a punto directo al contenedor backend en puerto 8000.
-  - CORS endurecido en FastAPI con inclusión explícita de `https://condominios.tepuynexus.com` y regex para previews de Vercel.
+* **Backend Asíncrono & Base de Datos en Hetzner VPS (`api-condominios.tepuynexus.com`):**
+  - Servidor Hetzner Cloud (Nuremberg, Alemania) con procesador ARM64 (Ampere) y Ubuntu 24.04 LTS.
+  - Orquestación con `docker-compose.prod.yml` ejecutando PostgreSQL 16 (RLS), Redis 7 y FastAPI.
+  - **Cloudflare Zero Trust Tunnel** (`cloudflared`) activo en estado *Buen Estado (Healthy)*: Enrutando el tráfico HTTPS hacia el contenedor `http://backend:8000` con **cero puertos públicos abiertos en el firewall del servidor**.
+  - Verificado en vivo endpoint de salud: `GET https://api-condominios.tepuynexus.com/health` $\rightarrow$ `{"status":"healthy","service":"TEPUY CONDO NEXUS","version":"1.0.0-PROD","environment":"production"}`.
+  - Base de datos inicializada y sembrada con `python src/seed_data.py`:
+    * SuperAdmin: `admin@tepuynexus.com` / `Admin123!` (Alfredo R. Martínez).
+    * Analista de Ventas: `ventas@tepuynexus.com` / `Ventas123!` (Valeria Gómez).
+    * Admin de Edificio: `condo.admin@tepuynexus.com` / `Condo123!` (Ing. Roberto Méndez).
+    * Residente Copropietario: `residente@tepuynexus.com` / `Residente123!` (Carlos Mendoza).
 
 ---
 
